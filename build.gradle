@@ -80,7 +80,7 @@ dependencies {
 shadowJar {
     classifier = ''
     configurations = [project.configurations.compile]
-    relocate 'io.papermc.lib', 'com.gmail.val59000mc.paperlib'
+    relocate 'io.papermc.lib', 'me.birajrai.paperlib'
 }
 
 build.dependsOn(shadowJar)
