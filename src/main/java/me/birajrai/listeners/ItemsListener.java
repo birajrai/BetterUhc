@@ -1,7 +1,5 @@
 package me.birajrai.listeners;
 
-import com.gmail.val59000mc.customitems.*;
-import com.gmail.val59000mc.players.*;
 import me.birajrai.BetterUhc;
 import me.birajrai.configuration.MainConfig;
 import me.birajrai.customitems.*;
