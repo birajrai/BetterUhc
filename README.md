@@ -1,4 +1,4 @@
-![Java CI with Gradle](https://github.com/buildus/BetterUhc/workflows/Java%20CI%20with%20Gradle/badge.svg)
+[![Java CI with Gradle](https://github.com/buildus/BetterUhc/actions/workflows/gradle.yml/badge.svg)](https://github.com/buildus/BetterUhc/actions/workflows/gradle.yml)
 
 # BetterUhc
 Automates UHC games on a dedicated 1.8 - 1.18 server.
