@@ -25,7 +25,7 @@ public class VaultManager {
 	    if (economyProvider != null) {
 	        economy = economyProvider.getProvider();
 	    }else{
-	    	Bukkit.getLogger().severe("[UhcCore] Error trying to load economy provider. Check that you have a economy plugin installed");
+	    	Bukkit.getLogger().severe("[BetterUHC] Error trying to load economy provider. Check that you have a economy plugin installed");
 	    }
     }
 
@@ -42,7 +42,7 @@ public class VaultManager {
 		}
 
 		if(economy == null){
-			Bukkit.getLogger().warning("[UhcCore] Vault is not loaded! Couldn't pay "+amount+" to "+player.getName()+"!");
+			Bukkit.getLogger().warning("[BetterUHC] Vault is not loaded! Couldn't pay "+amount+" to "+player.getName()+"!");
 			return;
 		}
 
@@ -59,7 +59,7 @@ public class VaultManager {
 		}
 
 		if(economy == null){
-			Bukkit.getLogger().warning("[UhcCore] Vault is not loaded! Couldn't withdraw "+amount+" to "+player.getName()+"!");
+			Bukkit.getLogger().warning("[BetterUHC] Vault is not loaded! Couldn't withdraw "+amount+" to "+player.getName()+"!");
 			return;
 		}
 

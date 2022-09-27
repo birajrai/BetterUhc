@@ -46,7 +46,7 @@ public class CraftsManager {
 	}
 
 	public static void loadBannedCrafts(){
-		Bukkit.getLogger().info("[UhcCore] Loading banned crafts list");
+		Bukkit.getLogger().info("[BetterUHC] Loading banned crafts list");
 
 		YamlFile cfg;
 
@@ -63,7 +63,7 @@ public class CraftsManager {
 			try {
 				bannedItems.add(JsonItemUtils.getItemFromJson(itemLine));
 			}catch (ParseException ex){
-				Bukkit.getLogger().warning("[UhcCore] Failed to register "+itemLine+" banned craft");
+				Bukkit.getLogger().warning("[BetterUHC] Failed to register "+itemLine+" banned craft");
 				ex.printStackTrace();
 			}
 		}
@@ -74,7 +74,7 @@ public class CraftsManager {
 	}
 
 	public static void loadCrafts(){
-		Bukkit.getLogger().info("[UhcCore] Loading custom crafts");
+		Bukkit.getLogger().info("[BetterUHC] Loading custom crafts");
 		YamlFile cfg;
 
 		try{
@@ -88,7 +88,7 @@ public class CraftsManager {
 
 		ConfigurationSection customCraftSection = cfg.getConfigurationSection("custom-crafts");
 		if (customCraftSection == null){
-			Bukkit.getLogger().info("[UhcCore] Done loading custom crafts");
+			Bukkit.getLogger().info("[BetterUHC] Done loading custom crafts");
 			return;
 		}
 
@@ -96,7 +96,7 @@ public class CraftsManager {
 		for(String name : craftsKeys){
 			ConfigurationSection section = cfg.getConfigurationSection("custom-crafts."+name);
 			if (section == null){
-				Bukkit.getLogger().severe("[UhcCore] custom-crafts."+name + " section does not exist!");
+				Bukkit.getLogger().severe("[BetterUHC] custom-crafts."+name + " section does not exist!");
 				continue;
 			}
 			
@@ -106,7 +106,7 @@ public class CraftsManager {
 			boolean defaultName, reviveItem, reviveWithInventory;
 			
 			try{
-				Bukkit.getLogger().info("[UhcCore] Loading custom craft "+name);
+				Bukkit.getLogger().info("[BetterUHC] Loading custom craft "+name);
 				
 				// Recipe
 				String[] lines = new String[3];
@@ -154,7 +154,7 @@ public class CraftsManager {
 				crafts.add(craft);
 			}catch(IllegalArgumentException | ParseException e){
 				//ignore craft if bad formatting
-				Bukkit.getLogger().warning("[UhcCore] Failed to register "+name+" custom craft : syntax error");
+				Bukkit.getLogger().warning("[BetterUHC] Failed to register "+name+" custom craft : syntax error");
 				Bukkit.getLogger().warning(e.getMessage());
 			}
 			
@@ -330,7 +330,7 @@ public class CraftsManager {
 
 	@SuppressWarnings("deprecation")
 	public static void registerGoldenHeadCraft(){
-		Bukkit.getLogger().info("[UhcCore] Loading custom craft for golden heads");
+		Bukkit.getLogger().info("[BetterUHC] Loading custom craft for golden heads");
 
 		ItemStack goldenHead = UhcItems.createGoldenHead();
 		ShapedRecipe headRecipe = VersionUtils.getVersionUtils().createShapedRecipe(goldenHead, "golden_head");

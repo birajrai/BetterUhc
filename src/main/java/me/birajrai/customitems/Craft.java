@@ -107,7 +107,7 @@ public class Craft {
 			}
 		}
 		
-		Bukkit.getLogger().info("[UhcCore] "+name+" custom craft registered");
+		Bukkit.getLogger().info("[BetterUHC] "+name+" custom craft registered");
 		Bukkit.getServer().addRecipe(craftRecipe);
 	}
 

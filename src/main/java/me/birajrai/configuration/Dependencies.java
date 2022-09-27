@@ -14,10 +14,10 @@ public class Dependencies {
     public static void loadWorldEdit() {
         Plugin wePlugin = Bukkit.getPluginManager().getPlugin("WorldEdit");
         if(wePlugin == null || !wePlugin.getClass().getName().equals("com.sk89q.worldedit.bukkit.WorldEditPlugin")) {
-            Bukkit.getLogger().warning("[UhcCore] WorldEdit plugin not found, there will be no support of schematics.");
+            Bukkit.getLogger().warning("[BetterUHC] WorldEdit plugin not found, there will be no support of schematics.");
             worldEditLoaded = false;
         }else {
-            Bukkit.getLogger().info("[UhcCore] Hooked with WorldEdit plugin.");
+            Bukkit.getLogger().info("[BetterUHC] Hooked with WorldEdit plugin.");
             worldEditLoaded = true;
         }
     }
@@ -25,12 +25,12 @@ public class Dependencies {
     public static void loadVault(){
         Plugin vault = Bukkit.getPluginManager().getPlugin("Vault");
         if(vault == null || !vault.getClass().getName().equals("net.milkbowl.vault.Vault")) {
-            Bukkit.getLogger().warning("[UhcCore] Vault plugin not found, there will be no support of economy rewards.");
+            Bukkit.getLogger().warning("[BetterUHC] Vault plugin not found, there will be no support of economy rewards.");
             vaultLoaded = false;
             return;
         }
 
-        Bukkit.getLogger().info("[UhcCore] Hooked with Vault plugin.");
+        Bukkit.getLogger().info("[BetterUHC] Hooked with Vault plugin.");
         vaultLoaded = true;
 
         VaultManager.setupEconomy();
@@ -39,19 +39,19 @@ public class Dependencies {
     public static void loadProtocolLib(){
         Plugin protocolLib = Bukkit.getPluginManager().getPlugin("ProtocolLib");
         if(protocolLib == null || !protocolLib.getClass().getName().equals("com.comphenix.protocol.ProtocolLib")) {
-            Bukkit.getLogger().warning("[UhcCore] ProtocolLib plugin not found.");
+            Bukkit.getLogger().warning("[BetterUHC] ProtocolLib plugin not found.");
             protocolLibLoaded = false;
             return;
         }
 
-        Bukkit.getLogger().info("[UhcCore] Hooked with ProtocolLib plugin.");
+        Bukkit.getLogger().info("[BetterUHC] Hooked with ProtocolLib plugin.");
         protocolLibLoaded = true;
 
         try {
             ProtocolUtils.register();
         }catch (Exception ex){
             protocolLibLoaded = false;
-            Bukkit.getLogger().severe("[UhcCore] Failed to load ProtocolLib, are you using the right version?");
+            Bukkit.getLogger().severe("[BetterUHC] Failed to load ProtocolLib, are you using the right version?");
             ex.printStackTrace();
         }
     }

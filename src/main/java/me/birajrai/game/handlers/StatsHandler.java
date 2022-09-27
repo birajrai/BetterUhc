@@ -196,7 +196,7 @@ public class StatsHandler {
             try {
                 storage.save();
             }catch (IOException ex){
-                Bukkit.getLogger().warning("[UhcCore] Failed to save storage.yml file!");
+                Bukkit.getLogger().warning("[BetterUHC] Failed to save storage.yml file!");
                 ex.printStackTrace();
             }
         }

@@ -249,7 +249,7 @@ public class MainConfig extends YamlFile {
 					updatedList = true;
 					newKeys.add(scenario.get().getKey());
 				}else {
-					Bukkit.getLogger().warning("[UhcCore] Invalid scenario key, " + key + " removing ...");
+					Bukkit.getLogger().warning("[BetterUHC] Invalid scenario key, " + key + " removing ...");
 				}
 			}
 		}

@@ -80,7 +80,7 @@ public class UploadCommandExecutor implements CommandExecutor{
     private String uploadFile(FileType fileType) throws IOException{
         File file = fileType.getFile();
 
-        Bukkit.getLogger().info("[UhcCore] Uploading file: " + file);
+        Bukkit.getLogger().info("[BetterUHC] Uploading file: " + file);
 
         BufferedReader reader = new BufferedReader(new FileReader(file));
 
@@ -99,7 +99,7 @@ public class UploadCommandExecutor implements CommandExecutor{
         reader.close();
 
         String url = FileUtils.uploadTextFile(sb);
-        Bukkit.getLogger().info("[UhcCore] Successfully uploaded file: " + file);
+        Bukkit.getLogger().info("[BetterUHC] Successfully uploaded file: " + file);
         return url;
     }
 

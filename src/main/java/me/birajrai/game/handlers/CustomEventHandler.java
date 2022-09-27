@@ -58,7 +58,7 @@ public class CustomEventHandler {
                     try {
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replace("%name%", uhcPlayer.getRealName()));
                     } catch (CommandException exception) {
-                        Bukkit.getLogger().warning("[UhcCore] Failed to execute time reward command: " + cmd);
+                        Bukkit.getLogger().warning("[BetterUHC] Failed to execute time reward command: " + cmd);
                         exception.printStackTrace();
                     }
                 });
@@ -84,7 +84,7 @@ public class CustomEventHandler {
             try {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd);
             } catch (CommandException exception) {
-                Bukkit.getLogger().warning("[UhcCore] Failed to execute time reward command: " + cmd);
+                Bukkit.getLogger().warning("[BetterUHC] Failed to execute time reward command: " + cmd);
                 exception.printStackTrace();
             }
         });
@@ -114,7 +114,7 @@ public class CustomEventHandler {
             try {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replace("%name%", uhcKiller.getRealName()));
             } catch (CommandException exception){
-                Bukkit.getLogger().warning("[UhcCore] Failed to execute kill reward command: " + cmd);
+                Bukkit.getLogger().warning("[BetterUHC] Failed to execute kill reward command: " + cmd);
                 exception.printStackTrace();
             }
         });
@@ -148,7 +148,7 @@ public class CustomEventHandler {
                     try {
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replace("%name%", player.getRealName()));
                     } catch (CommandException exception){
-                        Bukkit.getLogger().warning("[UhcCore] Failed to execute win reward command: " + cmd);
+                        Bukkit.getLogger().warning("[BetterUHC] Failed to execute win reward command: " + cmd);
                         exception.printStackTrace();
                     }
                 });
@@ -165,7 +165,7 @@ public class CustomEventHandler {
             try {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd);
             } catch (CommandException exception) {
-                Bukkit.getLogger().warning("[UhcCore] Failed to execute win reward command: " + cmd);
+                Bukkit.getLogger().warning("[BetterUHC] Failed to execute win reward command: " + cmd);
                 exception.printStackTrace();
             }
         });

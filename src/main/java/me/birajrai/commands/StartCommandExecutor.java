@@ -10,7 +10,7 @@ public class StartCommandExecutor implements CommandExecutor{
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-        sender.sendMessage(ChatColor.GREEN + "[UhcCore] Force starting has toggled!");
+        sender.sendMessage(ChatColor.GREEN + "[BetterUHC] Force starting has toggled!");
         PreStartThread.toggleForce();
         return true;
     }

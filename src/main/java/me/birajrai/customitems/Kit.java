@@ -37,7 +37,7 @@ public class Kit{
 	}
 
 	public boolean canBeUsedBy(Player player, MainConfig configuration){
-		return !configuration.get(MainConfig.ENABLE_KITS_PERMISSIONS) || player.hasPermission("uhc-core.kit."+key);
+		return !configuration.get(MainConfig.ENABLE_KITS_PERMISSIONS) || player.hasPermission("betteruhc.kit."+key);
 	}
 
 	/**

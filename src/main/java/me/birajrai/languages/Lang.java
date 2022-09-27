@@ -213,7 +213,7 @@ public class Lang{
 			try {
 				langFile.createNewFile();
 			}catch (IOException ex){
-				Bukkit.getLogger().severe("[UhcCore] Failed to create " + langFile.toString());
+				Bukkit.getLogger().severe("[BetterUHC] Failed to create " + langFile.toString());
 				ex.printStackTrace();
 				return;
 			}
@@ -258,7 +258,7 @@ public class Lang{
 		PLAYERS_SEND_BUNGEE_DISABLED = getString(lang, "players.send-bungee-disabled", "&cThis command is disabled");
 
 		// Display
-		DISPLAY_MESSAGE_PREFIX = getString(lang, "display.message-prefix", "&a[UhcCore]&r");
+		DISPLAY_MESSAGE_PREFIX = getString(lang, "display.message-prefix", "&a[BetterUHC]&r");
 		DISPLAY_EPISODE_MARK = getString(lang, "display.episode-mark", "End of episode %episode%!");
 		DISPLAY_SPECTATOR_CHAT = getString(lang, "display.spectator-chat", "&7[Spec] &r%player%&r: %message%");
 		DISPLAY_MOTD_LOADING  = getString(lang, "display.motd-loading", "Loading ...");
@@ -452,7 +452,7 @@ public class Lang{
 			try {
 				lang.save(langFile);
 			} catch (IOException ex) {
-				Bukkit.getLogger().severe("[UhcCore] Failed to edit " + langFile.toString());
+				Bukkit.getLogger().severe("[BetterUHC] Failed to edit " + langFile.toString());
 				ex.printStackTrace();
 			}
 		}
@@ -462,7 +462,7 @@ public class Lang{
 		String string = ChatColor.translateAlternateColorCodes('&', lang.getString(path, def));
 
 		if (maxLenth != -1 && string.length() > maxLenth){
-			Bukkit.getLogger().severe("[UhcCore] The message " + path + " is too long, max length is " + maxLenth + " characters!");
+			Bukkit.getLogger().severe("[BetterUHC] The message " + path + " is too long, max length is " + maxLenth + " characters!");
 			string = string.substring(0, maxLenth);
 		}
 

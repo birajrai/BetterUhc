@@ -57,7 +57,7 @@ public class PlayerDeathHandler {
         event.getDrops().addAll(modifiedDrops);
 
         // handle player leaving the server
-        boolean canContinueToSpectate = player.hasPermission("uhc-core.spectate.override")
+        boolean canContinueToSpectate = player.hasPermission("betteruhc.spectate.override")
                 || config.get(MainConfig.CAN_SPECTATE_AFTER_DEATH);
 
         if (!canContinueToSpectate) {
@@ -80,7 +80,7 @@ public class PlayerDeathHandler {
 
     private Set<ItemStack> handlePlayerDeath(UhcPlayer uhcPlayer, @Nullable Location location, Set<ItemStack> playerDrops, @Nullable Player killer) {
         if (uhcPlayer.getState() != PlayerState.PLAYING){
-            Bukkit.getLogger().warning("[UhcCore] " + uhcPlayer.getName() + " died while already in 'DEAD' mode!");
+            Bukkit.getLogger().warning("[BetterUHC] " + uhcPlayer.getName() + " died while already in 'DEAD' mode!");
             return playerDrops;
         }
 

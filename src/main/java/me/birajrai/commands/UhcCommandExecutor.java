@@ -27,7 +27,7 @@ public class UhcCommandExecutor implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 
 		if (args.length == 1 && args[0].equalsIgnoreCase("version")){
-			sender.sendMessage(ChatColor.GREEN + "BetterUhc version: " + BetterUhc.getPlugin().getDescription().getVersion());
+			sender.sendMessage(ChatColor.GREEN + "BetterUHC version: " + BetterUhc.getPlugin().getDescription().getVersion());
 			return true;
 		}
 

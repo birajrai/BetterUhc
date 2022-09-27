@@ -381,7 +381,7 @@ public class GameManager{
 
 	private void registerCommands(){
 		// Registers CommandExecutor
-		registerCommand("uhccore", new UhcCommandExecutor(this));
+		registerCommand("betteruhc", new UhcCommandExecutor(this));
 		registerCommand("chat", new ChatCommandExecutor(playerManager));
 		registerCommand("teleport", new TeleportCommandExecutor(this));
 		registerCommand("start", new StartCommandExecutor());
@@ -402,7 +402,7 @@ public class GameManager{
 	private void registerCommand(String commandName, CommandExecutor executor){
 		PluginCommand command = BetterUhc.getPlugin().getCommand(commandName);
 		if (command == null){
-			Bukkit.getLogger().warning("[UhcCore] Failed to register " + commandName + " command!");
+			Bukkit.getLogger().warning("[BetterUHC] Failed to register " + commandName + " command!");
 			return;
 		}
 

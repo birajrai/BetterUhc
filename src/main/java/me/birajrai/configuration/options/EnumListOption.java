@@ -25,7 +25,7 @@ public class EnumListOption<T extends Enum<T>> implements Option<List<T>> {
             try {
                 enumList.add(Enum.valueOf(type, s));
             }catch (IllegalArgumentException ex){
-                Bukkit.getLogger().severe("[UhcCore] Invalid enum type " + s);
+                Bukkit.getLogger().severe("[BetterUHC] Invalid enum type " + s);
                 ex.printStackTrace();
             }
         }

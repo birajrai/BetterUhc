@@ -44,7 +44,7 @@ public class KitsManager{
 	}
 	
 	public static void loadKits(){
-		Bukkit.getLogger().info("[UhcCore] Start loading kits");
+		Bukkit.getLogger().info("[BetterUHC] Start loading kits");
 
 		YamlFile cfg;
 
@@ -60,7 +60,7 @@ public class KitsManager{
 		kits.clear();
 
 		if (kitsSection == null){
-			Bukkit.getLogger().info("[UhcCore] Loaded 0 kits");
+			Bukkit.getLogger().info("[BetterUHC] Loaded 0 kits");
 			return;
 		}
 
@@ -68,7 +68,7 @@ public class KitsManager{
 		for(String kitKey : kitsKeys){
 
 			try{
-				Bukkit.getLogger().info("[UhcCore] Loading kit " + kitKey);
+				Bukkit.getLogger().info("[BetterUHC] Loading kit " + kitKey);
 				Kit.Builder builder = new Kit.Builder(kitKey);
 
 				String name = cfg.getString("kits." + kitKey + ".symbol.name");
@@ -101,17 +101,17 @@ public class KitsManager{
 
 				kits.add(builder.build());
 
-				Bukkit.getLogger().info("[UhcCore] Added kit " + kitKey);
+				Bukkit.getLogger().info("[BetterUHC] Added kit " + kitKey);
 
 			// IllegalArgumentException, Thrown by builder.build() when kit has no items.
 			}catch(ParseException | IllegalArgumentException ex){
-				Bukkit.getLogger().severe("[UhcCore] Kit "+kitKey+" was disabled because of an error of syntax.");
+				Bukkit.getLogger().severe("[BetterUHC] Kit "+kitKey+" was disabled because of an error of syntax.");
 				System.out.println(ex.getMessage());
 				ex.printStackTrace();
 			}
 		}
 
-		Bukkit.getLogger().info("[UhcCore] Loaded " + kits.size() + " kits");
+		Bukkit.getLogger().info("[BetterUHC] Loaded " + kits.size() + " kits");
 	}
 
 	public static void openKitSelectionInventory(Player player){

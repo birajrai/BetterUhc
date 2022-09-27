@@ -34,7 +34,7 @@ public class PotionEffectListOption implements Option<List<PotionEffect>> {
                 PotionEffect effect = new PotionEffect(type, duration, amplifier);
                 potionEffects.add(effect);
             }catch(IllegalArgumentException e){
-                Bukkit.getLogger().warning("[UhcCore] "+potionStr+" ignored, please check the syntax. It must be formated like POTION_NAME/duration/amplifier");
+                Bukkit.getLogger().warning("[BetterUHC] "+potionStr+" ignored, please check the syntax. It must be formated like POTION_NAME/duration/amplifier");
             }
         }
 

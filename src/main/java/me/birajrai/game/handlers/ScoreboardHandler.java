@@ -321,7 +321,7 @@ public class ScoreboardHandler {
                     second += translatedLine.substring(split);
 
                     if (second.length() > 16){
-                        Bukkit.getLogger().warning("[UhcCore] Scoreboard line is too long: '" + translatedLine + "'!");
+                        Bukkit.getLogger().warning("[BetterUHC] Scoreboard line is too long: '" + translatedLine + "'!");
                         second = "";
                     }
                 }

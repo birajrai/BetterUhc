@@ -42,7 +42,7 @@ public class CustomCraftsCommandExecutor implements CommandExecutor{
             return true;
         }
 
-        if (!player.hasPermission("uhc-core.commands.craft.create")){
+        if (!player.hasPermission("betteruhc.commands.craft.create")){
             player.sendMessage(ChatColor.RED + "Your not allowed to create recipes!");
             return true;
         }

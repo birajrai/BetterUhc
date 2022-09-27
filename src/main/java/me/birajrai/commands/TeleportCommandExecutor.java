@@ -32,14 +32,14 @@ public class TeleportCommandExecutor implements CommandExecutor{
 
 		UhcPlayer uhcPlayer = gameManager.getPlayerManager().getUhcPlayer(player);
 		if(
-				!player.hasPermission("uhc-core.commands.teleport-admin") &&
+				!player.hasPermission("betteruhc.commands.teleport-admin") &&
 				!(uhcPlayer.getState().equals(PlayerState.DEAD) && gameManager.getConfig().get(MainConfig.SPECTATING_TELEPORT))
 		){
 			uhcPlayer.sendMessage(Lang.COMMAND_SPECTATING_TELEPORT_ERROR);
 			return true;
 		}
 
-		if (args.length == 3 && player.hasPermission("uhc-core.commands.teleport-admin")){
+		if (args.length == 3 && player.hasPermission("betteruhc.commands.teleport-admin")){
 			// teleport to coordinates
 			double x, y, z;
 
@@ -59,7 +59,7 @@ public class TeleportCommandExecutor implements CommandExecutor{
 			return true;
 		}
 
-		if (args.length == 2 && player.hasPermission("uhc-core.commands.teleport-admin")){
+		if (args.length == 2 && player.hasPermission("betteruhc.commands.teleport-admin")){
 			// teleport player to player
 			Player player1, player2;
 
@@ -90,7 +90,7 @@ public class TeleportCommandExecutor implements CommandExecutor{
 
 		UhcPlayer uhcTarget = gameManager.getPlayerManager().getUhcPlayer(target);
 
-		if(!uhcTarget.getState().equals(PlayerState.PLAYING) && !player.hasPermission("uhc-core.commands.teleport-admin")){
+		if(!uhcTarget.getState().equals(PlayerState.PLAYING) && !player.hasPermission("betteruhc.commands.teleport-admin")){
 			uhcPlayer.sendMessage(Lang.COMMAND_SPECTATING_TELEPORT_ERROR);
 			return true;
 		}

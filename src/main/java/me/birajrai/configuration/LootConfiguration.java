@@ -33,7 +33,7 @@ public class LootConfiguration<T extends Enum<T>> {
 		try{
 			type = Enum.valueOf(classType, section.getName());
 		}catch(IllegalArgumentException e){
-			Bukkit.getLogger().warning("[UhcCore] Couldn't parse section '"+section.getName()+"' in mob-loot. This is not an existing entity type. Ignoring it.");
+			Bukkit.getLogger().warning("[BetterUHC] Couldn't parse section '"+section.getName()+"' in mob-loot. This is not an existing entity type. Ignoring it.");
 			return false;
 		}
 
@@ -45,7 +45,7 @@ public class LootConfiguration<T extends Enum<T>> {
 		}
 
 		if (itemStrings.isEmpty()){
-			Bukkit.getLogger().warning("[UhcCore] Couldn't parse section '"+section.getName()+"' in custom loot. Missing loot item(s).");
+			Bukkit.getLogger().warning("[BetterUHC] Couldn't parse section '"+section.getName()+"' in custom loot. Missing loot item(s).");
 			return false;
 		}
 
@@ -53,7 +53,7 @@ public class LootConfiguration<T extends Enum<T>> {
 			try {
 				loot.add(JsonItemUtils.getItemFromJson(itemStr));
 			} catch (ParseException ex) {
-				Bukkit.getLogger().warning("[UhcCore] Couldn't parse loot '" + type.name() + "' in custom loot.");
+				Bukkit.getLogger().warning("[BetterUHC] Couldn't parse loot '" + type.name() + "' in custom loot.");
 				ex.printStackTrace();
 				return false;
 			}
