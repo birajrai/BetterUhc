@@ -27,12 +27,12 @@ public class UhcCommandExecutor implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 
 		if (args.length == 1 && args[0].equalsIgnoreCase("version")){
-			sender.sendMessage(ChatColor.GREEN + "UhcCore version: " + BetterUhc.getPlugin().getDescription().getVersion());
+			sender.sendMessage(ChatColor.GREEN + "BetterUhc version: " + BetterUhc.getPlugin().getDescription().getVersion());
 			return true;
 		}
 
 		if (args.length == 1 && args[0].equalsIgnoreCase("reload")){
-			if (!sender.hasPermission("uhc-core.commands.reload")){
+			if (!sender.hasPermission("betteruhc.commands.reload")){
 				sender.sendMessage(ChatColor.RED + "You don't have the permission to use this command");
 				return true;
 			}
@@ -45,7 +45,7 @@ public class UhcCommandExecutor implements CommandExecutor{
 		}
 
 		if (args.length == 1 && args[0].equalsIgnoreCase("update")){
-			if (!sender.hasPermission("uhc-core.commands.update")){
+			if (!sender.hasPermission("betteruhc.commands.update")){
 				sender.sendMessage(ChatColor.RED + "You don't have the permission to use this command");
 				return true;
 			}
@@ -59,8 +59,8 @@ public class UhcCommandExecutor implements CommandExecutor{
 		}
 
 		// debug commands
-		if (!sender.hasPermission("uhc-core.commands.debug")){
-			sender.sendMessage(ChatColor.RED + "You don't have the permission to use UHC-Core debug commands");
+		if (!sender.hasPermission("betteruhc.commands.debug")){
+			sender.sendMessage(ChatColor.RED + "You don't have the permission to use BetterUHC debug commands");
 			return true;
 		}
 
