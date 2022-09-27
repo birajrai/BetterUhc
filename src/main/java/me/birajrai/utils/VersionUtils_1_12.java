@@ -176,7 +176,7 @@ public class VersionUtils_1_12 extends VersionUtils{
 
     @Override
     public void removeRecipe(ItemStack item, Recipe r){
-        Bukkit.getLogger().info("[UhcCore] Removing craft for item "+JsonItemUtils.getItemJson(item));
+        Bukkit.getLogger().info("[BetterUHC] Removing craft for item "+JsonItemUtils.getItemJson(item));
 
         try{
             // Minecraft classes
@@ -238,9 +238,9 @@ public class VersionUtils_1_12 extends VersionUtils{
 
             d.set(registryId, array);
 
-            Bukkit.getLogger().info("[UhcCore] Removed recipe for item "+JsonItemUtils.getItemJson(item));
+            Bukkit.getLogger().info("[BetterUHC] Removed recipe for item "+JsonItemUtils.getItemJson(item));
         } catch (Exception ex){
-            Bukkit.getLogger().warning("[UhcCore] Failed to remove recipe for item "+JsonItemUtils.getItemJson(item)+"!");
+            Bukkit.getLogger().warning("[BetterUHC] Failed to remove recipe for item "+JsonItemUtils.getItemJson(item)+"!");
             ex.printStackTrace();
         }
     }

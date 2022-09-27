@@ -32,7 +32,7 @@ public class TeleportPlayersThread implements Runnable{
 				continue;
 			}
 
-			Bukkit.getLogger().info("[UhcCore] Teleporting "+player.getName());
+			Bukkit.getLogger().info("[BetterUHC] Teleporting "+player.getName());
 
 			for(PotionEffect effect : gameManager.getConfig().get(MainConfig.POTION_EFFECT_ON_START)){
 				player.addPotionEffect(effect);

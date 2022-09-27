@@ -47,7 +47,7 @@ public class Updater extends Thread implements Listener{
                 runVersionCheck();
                 sleep(false);
             }catch (Exception ex){
-                Bukkit.getLogger().severe("[UhcCore] Failed to check for updates!");
+                Bukkit.getLogger().severe("[BetterUHC] Failed to check for updates!");
                 ex.printStackTrace();
                 sleep(true);
             }
@@ -64,7 +64,7 @@ public class Updater extends Thread implements Listener{
         try{
             sleep(time);
         }catch (InterruptedException ex){
-            Bukkit.getLogger().severe("[UhcCore] Update thread stopped!");
+            Bukkit.getLogger().severe("[BetterUHC] Update thread stopped!");
             ex.printStackTrace();
         }
     }
@@ -80,7 +80,7 @@ public class Updater extends Thread implements Listener{
 
     @EventHandler
     public void onCommand(PlayerCommandPreprocessEvent e){
-        if (!e.getMessage().equalsIgnoreCase("/uhccore update")){
+        if (!e.getMessage().equalsIgnoreCase("/betteruhc update")){
             return;
         }
         e.setCancelled(true);
@@ -109,7 +109,7 @@ public class Updater extends Thread implements Listener{
         // Add headers
         connection.setRequestMethod("GET");
         connection.addRequestProperty("Accept", "application/json");
-        connection.addRequestProperty("User-Agent", "UhcCore:"+ BetterUhc.getPlugin().getDescription().getVersion());
+        connection.addRequestProperty("User-Agent", "BetterUHC:"+ BetterUhc.getPlugin().getDescription().getVersion());
 
         connection.connect();
 
@@ -145,10 +145,10 @@ public class Updater extends Thread implements Listener{
 
     private void sendUpdateMessage(CommandSender receiver){
         receiver.sendMessage("");
-        receiver.sendMessage(ChatColor.DARK_GREEN + "[UhcCore] " + ChatColor.GREEN + "A new version of the UhcCore plugin is available!");
+        receiver.sendMessage(ChatColor.DARK_GREEN + "[BetterUHC] " + ChatColor.GREEN + "A new version of the BetterUHC plugin is available!");
         receiver.sendMessage(ChatColor.DARK_GREEN + "Current version: " + ChatColor.GREEN + currentVersion);
         receiver.sendMessage(ChatColor.DARK_GREEN + "New version: " + ChatColor.GREEN + newestVersion);
-        receiver.sendMessage(ChatColor.DARK_GREEN + "To update use: " + ChatColor.GREEN + "/uhccore update");
+        receiver.sendMessage(ChatColor.DARK_GREEN + "To update use: " + ChatColor.GREEN + "/betteruhc update");
         receiver.sendMessage(ChatColor.DARK_RED.toString() + ChatColor.BOLD + "WARNING: " + ChatColor.RED + "This will restart your server!");
         receiver.sendMessage("");
     }
@@ -157,7 +157,7 @@ public class Updater extends Thread implements Listener{
         HttpsURLConnection connection = (HttpsURLConnection) new URL(jarDownloadUrl).openConnection();
         connection.connect();
 
-        File newPluginFile = new File("plugins/UhcCore-" + newestVersion + ".jar");
+        File newPluginFile = new File("plugins/BetterUhc-" + newestVersion + ".jar");
         File oldPluginFile = new File(plugin.getClass().getProtectionDomain().getCodeSource().getLocation().getFile());
 
         InputStream in = connection.getInputStream();
@@ -176,15 +176,15 @@ public class Updater extends Thread implements Listener{
         in.close();
         connection.disconnect();
 
-        Bukkit.getLogger().info("[UhcCore] New plugin version downloaded.");
+        Bukkit.getLogger().info("[BetterUHC] New plugin version downloaded.");
 
         if (!newPluginFile.equals(oldPluginFile)){
             FileUtils.scheduleFileForDeletion(oldPluginFile);
-            Bukkit.getLogger().info("[UhcCore] Old plugin version will be deleted on next startup.");
+            Bukkit.getLogger().info("[BetterUHC] Old plugin version will be deleted on next startup.");
         }
 
         if (restart) {
-            Bukkit.getLogger().info("[UhcCore] Restarting to finish plugin update.");
+            Bukkit.getLogger().info("[BetterUHC] Restarting to finish plugin update.");
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "restart");
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "stop");
         }
@@ -201,11 +201,11 @@ public class Updater extends Thread implements Listener{
             return;
         }
 
-        Bukkit.getLogger().info("[UhcCore] Running auto update.");
+        Bukkit.getLogger().info("[BetterUHC] Running auto update.");
         try{
             updatePlugin(false);
         }catch (Exception ex){
-            Bukkit.getLogger().warning("[UhcCore] Failed to update plugin!");
+            Bukkit.getLogger().warning("[BetterUHC] Failed to update plugin!");
             ex.printStackTrace();
         }
     }

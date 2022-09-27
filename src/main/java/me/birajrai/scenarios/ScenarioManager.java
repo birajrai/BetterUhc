@@ -38,7 +38,7 @@ public class ScenarioManager {
     }
 
     /**
-     * Used to check if an scenario is registered in UhcCore.
+     * Used to check if an scenario is registered in BetterUHC.
      * @param scenario Scenario to check.
      * @return Returns true if the scenario is registered.
      */
@@ -47,7 +47,7 @@ public class ScenarioManager {
     }
 
     /**
-     * Used to register a third party scenario into UhcCore.
+     * Used to register a third party scenario into BetterUHC.
      * @param scenario The scenario to register.
      */
     public void registerScenario(Scenario scenario) {
@@ -208,10 +208,10 @@ public class ScenarioManager {
             for (String scenarioKey : defaultScenarios) {
                 Optional<Scenario> scenario = getScenarioByKey(scenarioKey);
                 if (scenario.isPresent()) {
-                    Bukkit.getLogger().info("[UhcCore] Loading " + scenario.get().getKey());
+                    Bukkit.getLogger().info("[BetterUHC] Loading " + scenario.get().getKey());
                     enableScenario(scenario.get());
                 }else {
-                    Bukkit.getLogger().warning("[UhcCore] Scenario with key " + scenarioKey + " can't be found!");
+                    Bukkit.getLogger().warning("[BetterUHC] Scenario with key " + scenarioKey + " can't be found!");
                 }
             }
         }

@@ -84,15 +84,15 @@ public class PlayerManager {
 					boolean canSpectate = gm.getConfig().get(MainConfig.CAN_SPECTATE_AFTER_DEATH);
 					if(
 							uhcPlayer.getState().equals(PlayerState.PLAYING) ||
-							((canSpectate || player.hasPermission("uhc-core.spectate.override")) && uhcPlayer.getState().equals(PlayerState.DEAD))
+							((canSpectate || player.hasPermission("betteruhc.spectate.override")) && uhcPlayer.getState().equals(PlayerState.DEAD))
 					){
 						return true;
 					}else{
 						throw new UhcPlayerJoinException(Lang.KICK_PLAYING);
 					}
 				}else{
-					if(player.hasPermission("uhc-core.join-override")
-							|| player.hasPermission("uhc-core.spectate.override")
+					if(player.hasPermission("betteruhc.join-override")
+							|| player.hasPermission("betteruhc.spectate.override")
 							|| gm.getConfig().get(MainConfig.CAN_JOIN_AS_SPECTATOR) && gm.getConfig().get(MainConfig.CAN_SPECTATE_AFTER_DEATH)){
 						UhcPlayer spectator = newUhcPlayer(player);
 						spectator.setState(PlayerState.DEAD);
@@ -102,7 +102,7 @@ public class PlayerManager {
 				}
 
 			case ENDED:
-				if(player.hasPermission("uhc-core.join-override")){
+				if(player.hasPermission("betteruhc.join-override")){
 					return true;
 				}
 				throw new UhcPlayerJoinException(Lang.KICK_ENDED);
@@ -194,7 +194,7 @@ public class PlayerManager {
 			uhcPlayer = getUhcPlayer(player);
 		}else{
 			uhcPlayer = newUhcPlayer(player);
-			Bukkit.getLogger().warning("[UhcCore] None existent player joined!");
+			Bukkit.getLogger().warning("[BetterUHC] None existent player joined!");
 		}
 
 		GameManager gm = GameManager.getGameManager();
@@ -490,7 +490,7 @@ public class PlayerManager {
 			}
 
 			Bukkit.getScheduler().runTaskLater(BetterUhc.getPlugin(), new TeleportPlayersThread(GameManager.getGameManager(), team), delayTeleportByTeam);
-			Bukkit.getLogger().info("[UhcCore] Teleporting a team in "+delayTeleportByTeam+" ticks");
+			Bukkit.getLogger().info("[BetterUHC] Teleporting a team in "+delayTeleportByTeam+" ticks");
 			delayTeleportByTeam += 10; // ticks
 		}
 

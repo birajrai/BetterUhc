@@ -34,7 +34,7 @@ public class DeathmatchArena extends Schematic {
 
 		enable = canBePasted();
 		if (!enable){
-			Bukkit.getLogger().info("[UhcCore] No WorldEdit/schematic installed so ending with deathmatch at 0 0");
+			Bukkit.getLogger().info("[BetterUHC] No WorldEdit/schematic installed so ending with deathmatch at 0 0");
 		}
 	}
 
@@ -46,7 +46,7 @@ public class DeathmatchArena extends Schematic {
 			if(isBuild()){
 				calculateTeleportSpots();
 			}else{
-				Bukkit.getLogger().severe("[UhcCore] Deathmatch will be at 0 0 as the arena could not be pasted.");
+				Bukkit.getLogger().severe("[BetterUHC] Deathmatch will be at 0 0 as the arena could not be pasted.");
 				enable = false;
 			}
 		}
@@ -79,7 +79,7 @@ public class DeathmatchArena extends Schematic {
 		File schematicFile = getSchematicFile();
 
 		if (spotsDate == schematicFile.lastModified() && spotMaterial.toString().equals(type)){
-			Bukkit.getLogger().info("[UhcCore] Loading stored arena teleport spots.");
+			Bukkit.getLogger().info("[BetterUHC] Loading stored arena teleport spots.");
 
 			vectorSpots = (ArrayList<Vector>) storage.get("arena.locations");
 
@@ -93,7 +93,7 @@ public class DeathmatchArena extends Schematic {
 					y = getLocation().getBlockY(),
 					z = getLocation().getBlockZ();
 
-			Bukkit.getLogger().info("[UhcCore] Scanning schematic for arena teleport spots.");
+			Bukkit.getLogger().info("[BetterUHC] Scanning schematic for arena teleport spots.");
 
 			for (int i = x - getWidth(); i < x + getWidth(); i++) {
 				for (int j = y - getHeight(); j < y + getHeight(); j++) {
@@ -102,7 +102,7 @@ public class DeathmatchArena extends Schematic {
 						if (block.getType().equals(spotMaterial) && hasAirOnTop(block)) {
 							spots.add(block.getLocation().clone().add(0.5, 1, 0.5));
 							vectorSpots.add(block.getLocation().clone().add(0.5, 1, 0.5).toVector());
-							Bukkit.getLogger().info("[UhcCore] Arena teleport spot found at " + i + " " + (j + 1) + " " + k);
+							Bukkit.getLogger().info("[BetterUHC] Arena teleport spot found at " + i + " " + (j + 1) + " " + k);
 						}
 					}
 				}
@@ -119,7 +119,7 @@ public class DeathmatchArena extends Schematic {
 		}
 
 		if(spots.isEmpty()){
-			Bukkit.getLogger().info("[UhcCore] No Arena teleport spot found, defaulting to schematic origin");
+			Bukkit.getLogger().info("[BetterUHC] No Arena teleport spot found, defaulting to schematic origin");
 		}else{
 			Collections.shuffle(spots);
 			teleportSpots = spots;

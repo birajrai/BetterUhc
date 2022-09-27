@@ -92,7 +92,7 @@ public class ScoreboardLayout {
 
         for (int i = list.size()-1; i >= 0; i--){
             if (newList.size() == 15){
-                Bukkit.getLogger().warning("[UhcCore] Scoreboard lines can't have more than 15 lines!");
+                Bukkit.getLogger().warning("[BetterUHC] Scoreboard lines can't have more than 15 lines!");
                 break;
             }
             newList.add(ChatColor.translateAlternateColorCodes('&',list.get(i)));

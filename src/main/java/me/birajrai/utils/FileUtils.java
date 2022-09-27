@@ -94,10 +94,10 @@ public class FileUtils{
                 continue;
             }
 
-            Bukkit.getLogger().info("[UhcCore] Deleting file: " + path);
+            Bukkit.getLogger().info("[BetterUHC] Deleting file: " + path);
 
             if (!file.delete()){
-                Bukkit.getLogger().warning("[UhcCore] Failed to delete file: " + path);
+                Bukkit.getLogger().warning("[BetterUHC] Failed to delete file: " + path);
                 notDeleted.add(path);
             }
         }
@@ -163,7 +163,7 @@ public class FileUtils{
         connection.addRequestProperty("Accept", "application/json");
         connection.addRequestProperty("Content-Length", String.valueOf(data.length()));
         connection.setRequestProperty("Content-Type", "text/plain");
-        connection.setRequestProperty("User-Agent", "UhcCore:"+ BetterUhc.getPlugin().getDescription().getVersion());
+        connection.setRequestProperty("User-Agent", "BetterUHC:"+ BetterUhc.getPlugin().getDescription().getVersion());
 
         // Send data
         connection.setDoOutput(true);

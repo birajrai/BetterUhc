@@ -166,11 +166,11 @@ public class VersionUtils_1_13 extends VersionUtils{
             while (iterator.hasNext()){
                 if (iterator.next().getResult().isSimilar(item)){
                     iterator.remove();
-                    Bukkit.getLogger().info("[UhcCore] Removed recipe for item "+JsonItemUtils.getItemJson(item));
+                    Bukkit.getLogger().info("[BetterUHC] Removed recipe for item "+JsonItemUtils.getItemJson(item));
                 }
             }
         }catch (Exception ex){
-            Bukkit.getLogger().warning("[UhcCore] Failed to remove recipe for item "+JsonItemUtils.getItemJson(item)+"!");
+            Bukkit.getLogger().warning("[BetterUHC] Failed to remove recipe for item "+JsonItemUtils.getItemJson(item)+"!");
             ex.printStackTrace();
         }
     }
@@ -284,7 +284,7 @@ public class VersionUtils_1_13 extends VersionUtils{
         Enchantment enchantment = Enchantment.getByName(key);
 
         if (enchantment != null){
-            Bukkit.getLogger().warning("[UhcCore] Using old deprecated enchantment names, replace: " + key + " with " + enchantment.getKey().getKey());
+            Bukkit.getLogger().warning("[BetterUHC] Using old deprecated enchantment names, replace: " + key + " with " + enchantment.getKey().getKey());
             return enchantment;
         }
 

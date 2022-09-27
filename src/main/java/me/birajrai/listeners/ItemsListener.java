@@ -212,7 +212,7 @@ public class ItemsListener implements Listener {
 			if(CraftsManager.isCraftItem(item)){
 				player.closeInventory();
 				Craft craft = CraftsManager.getCraftByDisplayName(item.getItemMeta().getDisplayName());
-				if(!config.get(MainConfig.ENABLE_CRAFTS_PERMISSIONS) || (config.get(MainConfig.ENABLE_CRAFTS_PERMISSIONS) && player.hasPermission("uhc-core.craft."+craft.getName()))){
+				if(!config.get(MainConfig.ENABLE_CRAFTS_PERMISSIONS) || (config.get(MainConfig.ENABLE_CRAFTS_PERMISSIONS) && player.hasPermission("betteruhc.craft."+craft.getName()))){
 					CraftsManager.openCraftInventory(player,craft);
 				}else{
 					player.sendMessage(Lang.ITEMS_CRAFT_NO_PERMISSION.replace("%craft%", craft.getName()));
@@ -260,7 +260,7 @@ public class ItemsListener implements Listener {
 				if (config.get(MainConfig.ENABLE_SCENARIO_VOTING)){
 					inv = scenarioManager.getScenarioVoteInventory(uhcPlayer);
 				}else {
-					inv = scenarioManager.getScenarioMainInventory(player.hasPermission("uhc-core.scenarios.edit"));
+					inv = scenarioManager.getScenarioMainInventory(player.hasPermission("betteruhc.scenarios.edit"));
 				}
 				player.openInventory(inv);
 				break;

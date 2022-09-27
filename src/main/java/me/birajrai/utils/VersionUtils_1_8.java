@@ -130,7 +130,7 @@ public class VersionUtils_1_8 extends VersionUtils{
             Method a = NMSUtils.getMethod(tileChest.getClass(), "a", String.class);
             a.invoke(tileChest, name);
         }catch (Exception ex){ // todo find a way to change the chest name on other versions up to 1.11
-            Bukkit.getLogger().severe("[UhcCore] Failed to rename chest! Are you on 1.9-1.11?");
+            Bukkit.getLogger().severe("[BetterUHC] Failed to rename chest! Are you on 1.9-1.11?");
             ex.printStackTrace();
         }
     }
@@ -169,11 +169,11 @@ public class VersionUtils_1_8 extends VersionUtils{
             while (iterator.hasNext()){
                 if (iterator.next().getResult().isSimilar(item)){
                     iterator.remove();
-                    Bukkit.getLogger().info("[UhcCore] Removed recipe for item "+JsonItemUtils.getItemJson(item));
+                    Bukkit.getLogger().info("[BetterUHC] Removed recipe for item "+JsonItemUtils.getItemJson(item));
                 }
             }
         }catch (Exception ex){
-            Bukkit.getLogger().warning("[UhcCore] Failed to remove recipe for item "+JsonItemUtils.getItemJson(item)+"!");
+            Bukkit.getLogger().warning("[BetterUHC] Failed to remove recipe for item "+JsonItemUtils.getItemJson(item)+"!");
             ex.printStackTrace();
         }
     }

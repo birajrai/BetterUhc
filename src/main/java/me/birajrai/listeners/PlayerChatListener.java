@@ -34,7 +34,7 @@ public class PlayerChatListener implements Listener{
 		// Spec chat
         if(!configuration.get(MainConfig.CAN_SEND_MESSAGES_AFTER_DEATH) && uhcPlayer.getState() == PlayerState.DEAD){
         	// check if has override permissions
-			if (player.hasPermission("uhc-core.chat.override")) return;
+			if (player.hasPermission("betteruhc.chat.override")) return;
 
 			// Send message in spec chat.
 			String message = Lang.DISPLAY_SPECTATOR_CHAT

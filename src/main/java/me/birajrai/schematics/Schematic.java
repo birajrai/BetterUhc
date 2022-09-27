@@ -21,7 +21,7 @@ public class Schematic {
     private File schematicFile;
 
     /**
-     * @param schematicName Name of the schematic that gets loaded for the UhcCore folder. (Don't include a file path or extension)
+     * @param schematicName Name of the schematic that gets loaded for the BetterUhc folder. (Don't include a file path or extension)
      * @param buildLocation Location to build the schematic.
      * @param loadingArea Radius around the location in chunks that should be generated before pasting the schematic.
      */
@@ -37,7 +37,7 @@ public class Schematic {
     }
 
     /**
-     * @param schematicName Name of the schematic that gets loaded for the UhcCore folder. (Don't include a file path or extension)
+     * @param schematicName Name of the schematic that gets loaded for the BetterUhc folder. (Don't include a file path or extension)
      * @param buildLocation Location to build the schematic.
      */
     public Schematic(String schematicName, Location buildLocation){
@@ -45,7 +45,7 @@ public class Schematic {
     }
 
     /**
-     * @param schematicName Name of the schematic that gets loaded for the UhcCore folder. (Don't include a file path or extension)
+     * @param schematicName Name of the schematic that gets loaded for the BetterUhc folder. (Don't include a file path or extension)
      */
     public Schematic(String schematicName){
         this(schematicName, null, 0);
@@ -95,7 +95,7 @@ public class Schematic {
             build = true;
         } catch (Exception e) {
             build = false;
-            Bukkit.getLogger().severe("[UhcCore] An error occurred while pasting the schematic " + schematicFile.getPath());
+            Bukkit.getLogger().severe("[BetterUHC] An error occurred while pasting the schematic " + schematicFile.getPath());
             e.printStackTrace();
             return;
         }
@@ -138,7 +138,7 @@ public class Schematic {
     }
 
     /**
-     * Used to obtain a schematic file from the UhcCore folder.
+     * Used to obtain a schematic file from the BetterUhc folder.
      * @param name Name of the schematic without file extension.
      * @return The schematic file matching the specified name.
      */

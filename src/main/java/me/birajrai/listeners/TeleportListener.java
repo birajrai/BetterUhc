@@ -86,7 +86,7 @@ public class TeleportListener implements Listener{
 	public void onPlayerTeleport(PlayerTeleportEvent e){
 		if (e.getCause() == TeleportCause.SPECTATE && !GameManager.getGameManager().getConfig().get(MainConfig.SPECTATING_TELEPORT)){
 			Player player = e.getPlayer();
-			if (!player.hasPermission("uhc-core.commands.teleport-admin")){
+			if (!player.hasPermission("betteruhc.commands.teleport-admin")){
 				e.setCancelled(true);
 				player.sendMessage(Lang.COMMAND_SPECTATING_TELEPORT_ERROR);
 			}

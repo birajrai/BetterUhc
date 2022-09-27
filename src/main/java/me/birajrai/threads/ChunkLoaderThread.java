@@ -63,13 +63,13 @@ public abstract class ChunkLoaderThread implements Runnable {
 
         // Cancel world generation if the plugin has been disabled.
         if (!BetterUhc.getPlugin().isEnabled()) {
-            Bukkit.getLogger().info("[UhcCore] Plugin is disabled, stopping world generation!");
+            Bukkit.getLogger().info("[BetterUHC] Plugin is disabled, stopping world generation!");
             return;
         }
 
         // Not yet done loading all chunks
         if(x <= maxChunk){
-            Bukkit.getLogger().info("[UhcCore] Loading map "+getLoadingState()+"% - "+chunksLoaded+"/"+totalChunksToLoad+" chunks loaded");
+            Bukkit.getLogger().info("[BetterUHC] Loading map "+getLoadingState()+"% - "+chunksLoaded+"/"+totalChunksToLoad+" chunks loaded");
 
             if (PaperLib.isPaper() && PaperLib.getMinecraftVersion() >= 13){
                 Bukkit.getScheduler().scheduleAsyncDelayedTask(BetterUhc.getPlugin(), this, restDuration);
@@ -84,10 +84,10 @@ public abstract class ChunkLoaderThread implements Runnable {
     }
 
     public void printSettings(){
-        Bukkit.getLogger().info("[UhcCore] Generating environment "+world.getEnvironment().toString());
-        Bukkit.getLogger().info("[UhcCore] Loading a total "+Math.floor(totalChunksToLoad)+" chunks, up to chunk ( "+maxChunk+" , "+maxChunk+" )");
-        Bukkit.getLogger().info("[UhcCore] Resting "+restDuration+" ticks every "+restEveryNumOfChunks+" chunks");
-        Bukkit.getLogger().info("[UhcCore] Loading map "+getLoadingState()+"%");
+        Bukkit.getLogger().info("[BetterUHC] Generating environment "+world.getEnvironment().toString());
+        Bukkit.getLogger().info("[BetterUHC] Loading a total "+Math.floor(totalChunksToLoad)+" chunks, up to chunk ( "+maxChunk+" , "+maxChunk+" )");
+        Bukkit.getLogger().info("[BetterUHC] Resting "+restDuration+" ticks every "+restEveryNumOfChunks+" chunks");
+        Bukkit.getLogger().info("[BetterUHC] Loading map "+getLoadingState()+"%");
     }
 
     private String getLoadingState(){

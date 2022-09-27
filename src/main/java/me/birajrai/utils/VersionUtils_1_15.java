@@ -31,9 +31,9 @@ public class VersionUtils_1_15 extends VersionUtils_1_14{
         boolean removed = Bukkit.removeRecipe(key);
 
         if (removed){
-            Bukkit.getLogger().info("[UhcCore] Removed recipe for "+key.toString());
+            Bukkit.getLogger().info("[BetterUHC] Removed recipe for "+key.toString());
         }else {
-            Bukkit.getLogger().info("[UhcCore] Failed to remove recipe for " + key.toString() + "!");
+            Bukkit.getLogger().info("[BetterUHC] Failed to remove recipe for " + key.toString() + "!");
         }
     }
 

@@ -43,9 +43,9 @@ public class BetterUhc extends JavaPlugin{
 
 		if (version == 0) {
 			version = MIN_VERSION;
-			Bukkit.getLogger().warning("[BetterUhc] Failed to detect server version! " + versionString + "?");
+			Bukkit.getLogger().warning("[BetterUHC] Failed to detect server version! " + versionString + "?");
 		}else {
-			Bukkit.getLogger().info("[BetterUhc] 1." + version + " Server detected!");
+			Bukkit.getLogger().info("[BetterUHC] 1." + version + " Server detected!");
 		}
 	}
 
@@ -62,7 +62,7 @@ public class BetterUhc extends JavaPlugin{
 		gameManager.getScenarioManager().disableAllScenarios();
 		
 		updater.runAutoUpdate();
-		Bukkit.getLogger().info("[BetterUhc] Plugin disabled");
+		Bukkit.getLogger().info("[BetterUHC] Plugin disabled");
 	}
 
 }

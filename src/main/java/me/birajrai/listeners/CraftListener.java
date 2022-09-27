@@ -36,7 +36,7 @@ public class CraftListener implements Listener{
 		GameManager gm = GameManager.getGameManager();
 		UhcPlayer uhcPlayer = gm.getPlayerManager().getUhcPlayer(player);
 
-		String permission = "uhc-core.craft." + craft.getName().toLowerCase().replaceAll(" ", "-");
+		String permission = "betteruhc.craft." + craft.getName().toLowerCase().replaceAll(" ", "-");
 		if(gm.getConfig().get(MainConfig.ENABLE_CRAFTS_PERMISSIONS) && !player.hasPermission(permission)){
 			uhcPlayer.sendMessage(Lang.ITEMS_CRAFT_NO_PERMISSION.replace("%craft%", ChatColor.translateAlternateColorCodes('&', craft.getName())));
 			event.setCancelled(true);

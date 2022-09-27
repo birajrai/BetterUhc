@@ -99,14 +99,14 @@ public class MapLoader {
 		String uuid = worldUuids.get(env);
 
 		if(uuid == null || uuid.equals("null")){
-			Bukkit.getLogger().info("[UhcCore] No world to delete");
+			Bukkit.getLogger().info("[BetterUHC] No world to delete");
 		}else{
 			File worldDir = new File(uuid);
 			if(worldDir.exists()){
-				Bukkit.getLogger().info("[UhcCore] Deleting last world : "+uuid);
+				Bukkit.getLogger().info("[BetterUHC] Deleting last world : "+uuid);
 				FileUtils.deleteFile(worldDir);
 			}else{
-				Bukkit.getLogger().info("[UhcCore] World "+uuid+" can't be removed, directory not found");
+				Bukkit.getLogger().info("[BetterUHC] World "+uuid+" can't be removed, directory not found");
 			}
 		}
 	}
@@ -117,7 +117,7 @@ public class MapLoader {
 			worldName = "uhc-"+env.name().toLowerCase();
 		}
 
-		Bukkit.getLogger().info("[UhcCore] Creating new world : "+worldName);
+		Bukkit.getLogger().info("[BetterUHC] Creating new world : "+worldName);
 		
 		GameManager gm = GameManager.getGameManager();
 
@@ -131,7 +131,7 @@ public class MapLoader {
 			if (mapSeed == -1) {
 				Random r = new Random();
 				mapSeed = seeds.get(r.nextInt(seeds.size()));
-				Bukkit.getLogger().info("[UhcCore] Picking random seed from list : "+mapSeed);
+				Bukkit.getLogger().info("[BetterUHC] Picking random seed from list : "+mapSeed);
 			}
 			wc.seed(mapSeed);
 		}else if(gm.getConfig().get(MainConfig.PICK_RANDOM_WORLD_FROM_LIST) && !worlds.isEmpty()){
@@ -174,7 +174,7 @@ public class MapLoader {
 		String uuid = worldUuids.get(env);
 
 		if(uuid == null || uuid.equals("null")){
-			Bukkit.getLogger().info("[UhcCore] No world to load, defaulting to default behavior");
+			Bukkit.getLogger().info("[BetterUHC] No world to load, defaulting to default behavior");
 			this.createNewWorld(env);
 		}else{
 			File worldDir = new File(uuid);
@@ -316,7 +316,7 @@ public class MapLoader {
 	}
 	
 	private void copyWorld(String randomWorldName, String worldName) {
-		Bukkit.getLogger().info("[UhcCore] Copying " + randomWorldName + " to " + worldName);
+		Bukkit.getLogger().info("[BetterUHC] Copying " + randomWorldName + " to " + worldName);
 		File worldDir = new File(randomWorldName);
 		if(worldDir.exists() && worldDir.isDirectory()){
 			recursiveCopy(worldDir,new File(worldName));
@@ -439,7 +439,7 @@ public class MapLoader {
 		ChunkLoaderThread chunkLoaderThread = new ChunkLoaderThread(world, size, restEveryNumOfChunks, restDuration) {
 			@Override
 			public void onDoneLoadingWorld() {
-				Bukkit.getLogger().info("[UhcCore] Environment "+env.toString()+" 100% loaded");
+				Bukkit.getLogger().info("[BetterUHC] Environment "+env.toString()+" 100% loaded");
 				if(env.equals(Environment.NORMAL) && config.get(MainConfig.ENABLE_NETHER)) {
 					generateChunks(Environment.NETHER);
 				}else {
