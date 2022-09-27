@@ -212,7 +212,7 @@ fast-mode:
 
   underground-nether:
     # Set it to true to allow pasting a nether schematic file in the overworld.
-    # The file should be named nether.schematic and be located in the plugins/UhcCore folder
+    # The file should be named nether.schematic and be located in the plugins/BetterUhc folder
     # If enabled, it will be pasted at random places in the world
     enable: false
 
@@ -457,7 +457,7 @@ deathmatch:
     # Time in seconds before force ending after last kill.
     delay: 120
 
-  # To end with a deathmatch arena, you must have WorldEdit installed and your arena.schematic file inside plugins/UhcCore
+  # To end with a deathmatch arena, you must have WorldEdit installed and your arena.schematic file inside plugins/BetterUhc
   arena-deathmatch:
     # Choose a rare block type that will create team teleport spots in the deathmatch arena
     # To view the correct item item data you can use '/iteminfo' in game (Permission: 'uhc-core.commands.iteminfo')
