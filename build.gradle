@@ -30,10 +30,6 @@ allprojects {
             // VaultAPI
             url = 'https://jitpack.io'
         }
-      //  maven {
-            // WorldEdit
-       //     url = 'http://maven.sk89q.com/repo/'
-      //  }
         maven {
             // ProtocolLib
             url "http://repo.dmulloy2.net/nexus/repository/public/"
@@ -66,13 +62,10 @@ dependencies {
     //shadow 'org.spigotmc:spigot-api:1.14.2-R0.1-SNAPSHOT'
     //shadow 'org.spigotmc:spigot-api:1.15.2-R0.1-SNAPSHOT'
     //shadow 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
-    //shadow 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
-    shadow 'org.spigotmc:spigot-api:1.18-R0.1-SNAPSHOT'
+    shadow 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
     shadow 'com.github.MilkBowl:VaultAPI:1.7'
-    shadow 'net.wesjd:anvilgui:1.5.3-SNAPSHOT'
-    compile name: 'BiomeMapping-1.3'
-   // compile name: 'worldedit-bukkit-6.1.5'
-   // compile name: 'worldedit-bukkit-7.1.0'
+    compile name: 'anvilgui-1.5.1-SNAPSHOT'
+    compile name: 'BiomeMapping-1.1'
     compile "io.papermc:paperlib:1.0.5"
     shadow 'com.comphenix.protocol:ProtocolLib:4.4.0'
     compile project('Support-WorldEdit-6')
