@@ -28,7 +28,7 @@ import java.net.URL;
 
 public class Updater extends Thread implements Listener{
 
-    private static final String LATEST_RELEASE = "https://api.github.com/repos/buildus/BetterUhc/releases/latest";
+    private static final String LATEST_RELEASE = "https://api.github.com/repos/birajrai/BetterUhc/releases/latest";
     private final Plugin plugin;
     private Version currentVersion, newestVersion;
     private boolean hasPendingUpdate;
