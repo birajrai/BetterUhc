@@ -67,7 +67,7 @@ dependencies {
     compile name: 'anvilgui-1.5.1-SNAPSHOT'
     compile name: 'BiomeMapping-1.1'
     compile "io.papermc:paperlib:1.0.8"
-    shadow 'com.comphenix.protocol:ProtocolLib:5.0.0'
+    shadow 'com.comphenix.protocol:ProtocolLib:5.1.0'
     compile project('Support-WorldEdit-6')
     compile project('Support-WorldEdit-7')
 }
